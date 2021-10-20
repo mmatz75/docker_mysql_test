@@ -1,0 +1,16 @@
+version: "3"
+services:
+  mysql:
+    image: "mysql:8.0"
+    environment:
+      - MYSQL_DATABASE=world
+      #- MYSQL_USER=user
+      #- MYSQL_PASSWORD=password
+      #- MYSQL_ROOT_PASSWORD=mypassword
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - "storage:/var/lib/mysql"
+      #- "./initdb/:/docker-entrypoint-initdb.d"
+
+volumes:
+  storage:
